@@ -1,0 +1,43 @@
+﻿@using Anyar.Models
+@model List<Position>
+
+
+<div class="row">
+    <div class="mt-5 col-lg-8 d-flex align-items-stretch">
+        <div class="card w-100">
+            <div class="card-body p-4"
+
+
+                <a asp-action="Create" asp-controller="Position" class="btn btn-success">Create</a>
+                <div class="table-responsive">
+                    <table class="table text-nowrap mb-0 align-middle">
+                        <thead class="text-dark fs-4">
+                            <tr>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">Name</h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">Setting</h6>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var item in Model)
+                            {
+                                <tr>
+                                    <td class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">@item.Name</h6>
+                                    </td>
+                                    <td class="border-bottom-0">
+                                        <a asp-action="Update" asp-controller="Position" class="btn btn-primary">Update</a>
+                                        <a asp-action="Delete" asp-controller="Position" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
